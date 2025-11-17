@@ -36,5 +36,5 @@ jobs:
           echo test, and deploy your project.
           echo ${{ secrets.SSHKEY }} > chave.pem
           chmod 600 chave.pem
-          ssh -i chave.pem gestor@20.215.201.115 "apt update; apt install apache2"
+          ssh -o StrictHostKeyChecking=no -i chave.pem gestor@20.215.201.115 "apt update; apt install apache2"
 #          scp -i chave.pem gestor@20.215.201.115:/index.html /var/www/html/index.html
