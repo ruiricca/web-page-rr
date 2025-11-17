@@ -37,9 +37,9 @@ jobs:
           ls -l
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo ${{ secrets.SSHKEY }} > chave.pem
+          echo "${{ secrets.SSHKEY }}" > chave.pem
           ls -l
           chmod 600 chave.pem
           ssh -o StrictHostKeyChecking=no -i chave.pem gestor@20.215.201.115 "sudo su; apt update; apt install apache2"
-#          scp -i chave.pem gestor@20.215.201.115:/index.html /var/www/html/index.html
           ls -l
+#          scp -i chave.pem gestor@20.215.201.115:/index.html /var/www/html/index.html
